@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="IHisoSOAPWebServiceservice" targetNamespace="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+  <message name="HelloWorld0Request">
+    <part name="Param1" type="xs:string"/>
+  </message>
+  <message name="HelloWorld0Response">
+    <part name="return" type="xs:string"/>
+  </message>
+  <message name="Topup1Request">
+    <part name="cUserID" type="xs:string"/>
+    <part name="cTransactionID" type="xs:string"/>
+    <part name="cInvoiceNo" type="xs:string"/>
+    <part name="cTransactionType" type="xs:string"/>
+    <part name="cRteMethod" type="xs:string"/>
+    <part name="cOperatorID" type="xs:string"/>
+    <part name="cDistributerID" type="xs:string"/>
+    <part name="cTerminalID" type="xs:string"/>
+    <part name="cTerminalName" type="xs:string"/>
+    <part name="cSubscriberID" type="xs:string"/>
+    <part name="iAmount" type="xs:int"/>
+    <part name="cProcessorID" type="xs:string"/>
+    <part name="iDiler" type="xs:string"/>
+    <part name="dDateTime" type="xs:string"/>
+  </message>
+  <message name="Topup1Response">
+    <part name="return" type="xs:string"/>
+  </message>
+  <message name="rTopup2Request">
+    <part name="cUserID" type="xs:string"/>
+    <part name="cTransactionID" type="xs:string"/>
+    <part name="cInvoiceNo" type="xs:string"/>
+    <part name="cTransactionType" type="xs:string"/>
+    <part name="cRteMethod" type="xs:string"/>
+    <part name="cOperatorID" type="xs:string"/>
+    <part name="cDistributerID" type="xs:string"/>
+    <part name="cTerminalID" type="xs:string"/>
+    <part name="cTerminalName" type="xs:string"/>
+    <part name="cSubscriberID" type="xs:string"/>
+    <part name="iAmount" type="xs:int"/>
+    <part name="cProcessorID" type="xs:string"/>
+    <part name="iDiler" type="xs:string"/>
+    <part name="dDateTime" type="xs:string"/>
+  </message>
+  <message name="rTopup2Response">
+    <part name="return" type="xs:string"/>
+  </message>
+  <portType name="IHisoSOAPWebService">
+    <operation name="HelloWorld">
+      <input message="tns:HelloWorld0Request"/>
+      <output message="tns:HelloWorld0Response"/>
+    </operation>
+    <operation name="Topup">
+      <input message="tns:Topup1Request"/>
+      <output message="tns:Topup1Response"/>
+    </operation>
+    <operation name="rTopup">
+      <input message="tns:rTopup2Request"/>
+      <output message="tns:rTopup2Response"/>
+    </operation>
+  </portType>
+  <binding name="IHisoSOAPWebServicebinding" type="tns:IHisoSOAPWebService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="HelloWorld">
+      <soap:operation soapAction="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService#HelloWorld" style="rpc"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </output>
+    </operation>
+    <operation name="Topup">
+      <soap:operation soapAction="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService#Topup" style="rpc"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </output>
+    </operation>
+    <operation name="rTopup">
+      <soap:operation soapAction="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService#rTopup" style="rpc"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:HisoSOAPWebServiceIntf-IHisoSOAPWebService"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="IHisoSOAPWebServiceservice">
+    <port name="IHisoSOAPWebServicePort" binding="tns:IHisoSOAPWebServicebinding">
+      <soap:address location="http://25.65.176.1:1024/soap/IHisoSOAPWebService"/>
+    </port>
+  </service>
+</definitions>
+

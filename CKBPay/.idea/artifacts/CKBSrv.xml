@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CKBSrv">
+    <output-path>$PROJECT_DIR$/out/artifacts/CKBSrv</output-path>
+    <root id="archive" name="CKBSrv.war">
+      <element id="artifact" artifact-name="CKBPay:Web exploded" />
+    </root>
+  </artifact>
+</component>
